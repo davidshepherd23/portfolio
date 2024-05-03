@@ -28,13 +28,13 @@ export default function Intro() {
             }}
           >
             <Image
-              src="/aiony-haust-3TLl_97HNJo-unsplash.jpg"
+              src="/me.png"
               alt="Portrait image"
               width="192"
               height="192"
               quality="95"
               priority={true}
-              className="h-24 w-24 rounded-full border-[0.35rem] border-white object-cover shadow-xl"
+              className="h-40 w-40 rounded-full border-[0.35rem] border-white object-cover shadow-xl"
             />
           </motion.div>
           <motion.span
@@ -48,7 +48,7 @@ export default function Intro() {
               duration: 0.7,
             }}
           >
-            💰
+            👋
           </motion.span>
         </div>
       </div>
@@ -61,14 +61,13 @@ export default function Intro() {
         <span className="font-bold">Hello, I'm David! </span>
         I'm a <span className="font-bold">full-stack developer </span>
         with <span className="font-bold">2 years </span>
-        of experience. I enjoy building
-        <span className="italic"> websites and webapps. </span>
-        My focus is
-        <span className="underline"> React (Next.js) </span>
+        of experience. My focus is <span className="underline">
+          React
+        </span> and <span className="underline">Next.js</span>
       </motion.h1>
 
       <motion.div
-        className="flex flex-col items-center justify-center gap-2 px-4 text-lg font-medium sm:flex-row"
+        className="flex flex-col items-center justify-center gap-4 px-4 text-lg font-medium sm:flex-row"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -88,28 +87,32 @@ export default function Intro() {
           href="/CV.pdf"
           download
           className="flex items-center gap-2 rounded-full border border-black/10 bg-white px-7 py-3 
-          outline-none transition hover:scale-110 focus:scale-110 active:scale-105"
+          outline-none transition hover:scale-110 focus:scale-110 active:scale-105 dark:bg-white/10
+          dark:hover:text-white"
         >
-          Download CV <HiDownload className="opacity-70 transition" />{" "}
+          Download CV <HiDownload className="opacity-70 transition " />{" "}
         </a>
+        <div className="felx-row mt-5 flex justify-around gap-10 sm:mt-0 sm:gap-4">
+          <a
+            className="flex h-[3rem] w-[3rem] items-center justify-center gap-2 rounded-full border border-black/10 bg-white p-4 
+          text-gray-700 hover:scale-[1.15] hover:text-gray-950 focus:scale-[1.15] 
+          active:scale-105 dark:bg-white/10 dark:text-white/70 dark:hover:text-white"
+            href="https://www.linkedin.com/in/davidjuhasz23/"
+            target="_blank"
+          >
+            <BsLinkedin />
+          </a>
 
-        <a
-          className="flex items-center gap-2 rounded-full border border-black/10 bg-white p-4 text-gray-700 hover:scale-[1.15] 
-        hover:text-gray-950 focus:scale-[1.15] active:scale-105"
-          href="https://www.linkedin.com/in/davidjuhasz23/"
-          target="_blank"
-        >
-          <BsLinkedin />
-        </a>
-
-        <a
-          className="flex items-center gap-2 rounded-full border border-black/10 bg-white p-4 text-[1.35rem] 
-        text-gray-700 hover:scale-[1.15] hover:text-gray-950 focus:scale-[1.15] active:scale-105"
-          href="https://github.com/davidshepherd23"
-          target="_blank"
-        >
-          <FaGithubSquare />
-        </a>
+          <a
+            className="flex h-[3rem] w-[3rem] items-center justify-center gap-2 rounded-full border border-black/10 bg-white p-4 text-[1.35rem] 
+          text-gray-700 hover:scale-[1.15] hover:text-gray-950 focus:scale-[1.15] active:scale-105 
+          dark:bg-white/10 dark:text-white/70 dark:hover:text-white"
+            href="https://github.com/davidshepherd23"
+            target="_blank"
+          >
+            <FaGithubSquare />
+          </a>
+        </div>
       </motion.div>
     </section>
   );

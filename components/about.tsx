@@ -19,16 +19,29 @@ export default function About() {
       <SectionHeading title={"About"} />
 
       <p className="mb-3">
-        Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor
-        sit amet, consectetur adipisicing elit. Maxime cupiditate, nisi
-        assumenda nobis eius esse rerum deserunt delectus soluta fugiat
-        consequatur omnis id, molestiae porro quos corporis sint labore aperiam!
+        I'm a 24-year-old <span className="font-medium">solo entrepreneur</span>{" "}
+        and <span className="font-medium">web developer</span> from Hungary. My
+        primary focus lies in full-stack web development, with{" "}
+        <span className="underline">React</span> and{" "}
+        <span className="underline">Next.js</span>. I have a degree in{" "}
+        <span className="font-medium">Computer Science</span> and two years of
+        experience in <span className="font-medium">cloud engineering</span>.
+        Additionally, I hold certifications in{" "}
+        <span className="italic">Project Management</span> and{" "}
+        <span className="italic">Data Analytics</span> from Google,
+        complementing my technical expertise with a solid foundation in business
+        and startup methodologies. I embrace a lifelong learning mindset,
+        continuously striving to enhance my capabilities.
       </p>
+
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor
-        sit amet, consectetur adipisicing elit. Maxime cupiditate, nisi
-        assumenda nobis eius esse rerum deserunt delectus soluta fugiat
-        consequatur omnis id, molestiae porro quos corporis sint labore aperiam!
+        After a few years of cloud engineering work, I decided to make a leap
+        and seek something that suited me better.{" "}
+        <span className="italic">
+          I traveled to Asia for 7 months to learn skills and explore my
+          personality and virtues in more detail, as well as this part of the
+          world.
+        </span>
       </p>
     </motion.section>
   );

@@ -19,7 +19,7 @@ export const sendEmail = async (formData: FormData) => {
   }
   if (!validateString(message, 5000)) {
     return {
-      error: "Invalid message",
+      error: "Invalid message. Use less than 5000 characters.",
     };
   }
 
