@@ -19,8 +19,9 @@ export default function About() {
       <SectionHeading title={"About"} />
 
       <p className="mb-3">
-        I'm a 24-year-old <span className="font-medium">solo entrepreneur</span>{" "}
-        and <span className="font-medium">web developer</span> from Hungary. My
+        I&apos;m a 24-year-old{" "}
+        <span className="font-medium">solo entrepreneur</span> and{" "}
+        <span className="font-medium">web developer</span> from Hungary. My
         primary focus lies in full-stack web development, with{" "}
         <span className="underline">React</span> and{" "}
         <span className="underline">Next.js</span>. I have a degree in{" "}

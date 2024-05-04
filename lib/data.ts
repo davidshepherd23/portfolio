@@ -1,7 +1,8 @@
 import React from "react";
-import { CgWorkAlt } from "react-icons/cg";
+import { MdOutlineWork } from "react-icons/md";
 import { SiGooglecloud } from "react-icons/si";
-import { LuGraduationCap } from "react-icons/lu";
+import { RiGraduationCapFill } from "react-icons/ri";
+import { RiReactjsLine } from "react-icons/ri";
 import mlImage from "@/public/ml.png";
 import shopSmartImg from "@/public/shopsmart.png";
 import speakerzImg from "@/public/speakerz.png";
@@ -39,7 +40,7 @@ export const experiencesData = [
     title: "Computer Science BSc",
     location: "Eötvös Loránd University (Budapest, Hungary)",
     description: "I graduated in 2022.",
-    icon: React.createElement(LuGraduationCap),
+    icon: React.createElement(RiGraduationCapFill),
     date: "2019 - 2022",
   },
   {
@@ -47,7 +48,7 @@ export const experiencesData = [
     location: "Deutsche Telekom IT Solutions HU · Internship",
     description:
       "I gained hands-on experience in AI basics, computer vision, and machine learning in this position.",
-    icon: React.createElement(CgWorkAlt),
+    icon: React.createElement(MdOutlineWork),
     date: "Oct 2021 - Jul 2021",
   },
   {
@@ -57,6 +58,14 @@ export const experiencesData = [
       "As a Solution Engineer, I design cloud solutions for the German market as part of a team of 20 professionals. Holding a Google Cloud Engineer Associate certification, I strive to continuously expand my knowledge through ongoing courses and training.",
     icon: React.createElement(SiGooglecloud),
     date: "Jul 2022 - Oct 2023",
+  },
+  {
+    title: "Freelancing / Looking for a job",
+    location: "Rotterdam · Full-time (remote)",
+    description:
+      "I'm currently looking for a full-stack position. If you have any questions, feel free to contact me.",
+    icon: React.createElement(RiReactjsLine),
+    date: "Jun 2024 - ",
   },
 ] as const;
 
@@ -121,7 +130,7 @@ export const skillsData = [
   "GCP",
   "Firebase",
   "Redux",
-  "PostgreSQL",
+  "SQL",
   "Python",
   "AI",
   "Machine Learning",
