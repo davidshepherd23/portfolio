@@ -133,6 +133,7 @@ export const skillsData = [
   "SQL",
   "Python",
   "AI",
+  "Tensorflow",
   "Machine Learning",
   "GitHub Copilot",
 ] as const;
