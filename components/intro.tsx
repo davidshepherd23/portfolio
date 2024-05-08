@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import PortraitImg from "../public/me.webp";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
@@ -24,16 +25,15 @@ export default function Intro() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{
               type: "tween",
-              duration: 0.2,
             }}
           >
             <Image
-              src="/me.png"
+              src={PortraitImg}
               alt="Portrait image"
               width="192"
               height="192"
-              quality="95"
-              priority={true}
+              quality="75"
+              priority
               className="h-40 w-40 rounded-full border-[0.35rem] border-white object-cover shadow-xl"
             />
           </motion.div>
@@ -44,8 +44,6 @@ export default function Intro() {
             transition={{
               type: "spring",
               stiffness: 125,
-              delay: 0.1,
-              duration: 0.7,
             }}
           >
             👋
@@ -70,9 +68,7 @@ export default function Intro() {
         className="flex flex-col items-center justify-center gap-4 px-4 text-lg font-medium sm:flex-row"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 1,
-        }}
+        transition={{}}
       >
         <Link
           href="#contact"

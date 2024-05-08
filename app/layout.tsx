@@ -6,13 +6,19 @@ import { Toaster } from "react-hot-toast";
 import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 import Footer from "@/components/footer";
+import Head from "next/head";
+import Image from "next/image";
+import thumbnailImg from "@/public/thumbnail.png";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "David Juhasz Portfolio website",
+  title: "Portfolio: David Juhasz",
   description:
     "A portfolio website for David Juhasz. I am a full stack web developer using NextJS, Typescript and React.",
+  openGraph: {
+    images: [thumbnailImg],
+  },
 };
 
 export default function RootLayout({
@@ -47,5 +53,30 @@ export default function RootLayout({
         </ThemeContextProvider>
       </body>
     </html>
+  );
+}
+
+export function Metatags({
+  title = "Portfolio: David Juhasz",
+  description = "A portfolio website for David Juhasz. I am a full stack web developer using NextJS, Typescript and React.",
+}) {
+  return (
+    <Head>
+      <meta name="title" content={title} />
+      <meta name="description" content={description} />
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:site" content="@JDavid233" />
+      <meta name="twitter:title" content={thumbnailImg.src} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={thumbnailImg.src} />
+      <meta name="twitter:url" content="https://davidjuhasz.vercel.app" />
+
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={thumbnailImg.src} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://davidjuhasz.vercel.app" />
+    </Head>
   );
 }
