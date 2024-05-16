@@ -7,6 +7,7 @@ import mlImage from "@/public/ml.png";
 import shopSmartImg from "@/public/shopsmart.png";
 import speakerzImg from "@/public/speakerz.png";
 import portfolioImg from "@/public/portfolio_site.png";
+import mentalHealthSiteImg from "@/public/mental_health_site.png";
 
 export const links = [
   {
@@ -70,6 +71,21 @@ export const experiencesData = [
 ] as const;
 
 export const projectsData = [
+  {
+    title: "PsychAI - Landing Page",
+    description:
+      "PsychAI is a mental health support AI BOT. I made a landing page for them.",
+    tags: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Firebase",
+    ],
+
+    imageUrl: mentalHealthSiteImg,
+  },
   {
     title: "Portfolio Website (This Website)",
     description:
