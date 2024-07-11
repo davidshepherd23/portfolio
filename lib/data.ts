@@ -75,14 +75,7 @@ export const projectsData = [
     title: "PsychAI - Landing Page",
     description:
       "PsychAI is a mental health support AI BOT. I made a landing page for them.",
-    tags: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "Firebase",
-    ],
+    tags: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Firebase"],
 
     imageUrl: mentalHealthSiteImg,
   },

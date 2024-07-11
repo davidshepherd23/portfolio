@@ -19,20 +19,25 @@ export default function About() {
       <SectionHeading title={"About"} />
 
       <p className="mb-3">
-        I&apos;m a 24-year-old{" "}
-        <span className="font-medium">solo entrepreneur</span> and{" "}
-        <span className="font-medium">web developer</span> from Hungary. My
-        primary focus lies in full-stack web development, with{" "}
+        I&apos;m a Rotterdam-based{" "}
+        <span className="font-medium">front-end/full-stack</span> web developer.
+        My primary focus lies in full-stack web development, with{" "}
         <span className="underline">React</span> and{" "}
         <span className="underline">Next.js</span>. I have a degree in{" "}
         <span className="font-medium">Computer Science</span> and two years of
-        experience in <span className="font-medium">cloud engineering</span>.
+        work experience as a{" "}
+        <span className="font-medium">Cloud Engineer at Deutsche Telekom</span>.
         Additionally, I hold certifications in{" "}
         <span className="italic">Project Management</span> and{" "}
         <span className="italic">Data Analytics</span> from Google,
         complementing my technical expertise with a solid foundation in business
-        and startup methodologies. I embrace a lifelong learning mindset,
-        continuously striving to enhance my capabilities.
+        and startup methodologies. I&apos;m highly interested in the business
+        side of technology, next to my technical interests and background.
+        I&apos;ve built multiple “start-up-like” projects with small teams in
+        the last 10 years, and never stopped trying. My current focus has
+        shifted to getting relevant experience from the startup world, and
+        getting to know more like-minded people. I embrace a lifelong learning
+        mindset, continuously striving to enhance my capabilities.
       </p>
 
       <p>
