@@ -20,24 +20,20 @@ export default function About() {
 
       <p className="mb-3">
         I&apos;m a Rotterdam-based{" "}
-        <span className="font-medium">front-end/full-stack</span> web developer.
-        My primary focus lies in full-stack web development, with{" "}
-        <span className="underline">React</span> and{" "}
-        <span className="underline">Next.js</span>. I have a degree in{" "}
-        <span className="font-medium">Computer Science</span> and two years of
-        work experience as a{" "}
-        <span className="font-medium">Cloud Engineer at Deutsche Telekom</span>.
-        Additionally, I hold certifications in{" "}
-        <span className="italic">Project Management</span> and{" "}
-        <span className="italic">Data Analytics</span> from Google,
-        complementing my technical expertise with a solid foundation in business
-        and startup methodologies. I&apos;m highly interested in the business
-        side of technology, next to my technical interests and background.
-        I&apos;ve built multiple “start-up-like” projects with small teams in
-        the last 10 years, and never stopped trying. My current focus has
-        shifted to getting relevant experience from the startup world, and
-        getting to know more like-minded people. I embrace a lifelong learning
-        mindset, continuously striving to enhance my capabilities.
+        <span className="font-medium">Product Manager</span>. Focusing on
+        solving meaningful problems in the world via software and technology.
+        Navigate challenges with a constant drive for innovation and the ability
+        to simplify complex problems into manageable steps. Embracing a lifelong
+        learning mindset, continuously striving to enhance my skillset with the
+        intention to lay the groundwork for future ventures.
+      </p>
+      <p>
+        {" "}
+        Gained most of my experience in scrapy/small startup-like environments,
+        but I was thriving in an established corporate environment as well.
+        I&apos;ve led multiple software projects with small teams in the last 8
+        years, and gained a reasonable amount of hands-on experience about
+        software project management.
       </p>
 
       <p>

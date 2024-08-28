@@ -6,6 +6,7 @@ import { RiReactjsLine } from "react-icons/ri";
 import mlImage from "@/public/ml.png";
 import shopSmartImg from "@/public/shopsmart.png";
 import speakerzImg from "@/public/speakerz.png";
+import digustaImg from "@/public/digusta.png";
 import portfolioImg from "@/public/portfolio_site.png";
 import mentalHealthSiteImg from "@/public/mental_health_site.png";
 
@@ -60,17 +61,64 @@ export const experiencesData = [
     icon: React.createElement(SiGooglecloud),
     date: "Jul 2022 - Oct 2023",
   },
-  {
-    title: "Freelancing / Looking for a job",
-    location: "Rotterdam · Full-time (remote)",
-    description:
-      "I'm currently looking for a full-stack position. If you have any questions, feel free to contact me.",
-    icon: React.createElement(RiReactjsLine),
-    date: "Jun 2024 - ",
-  },
 ] as const;
 
 export const projectsData = [
+  {
+    title: "ShopSmart",
+    description:
+      "A grocery shopping platform that creates recipes from discounted items from shops near you and helps you plan your next meal.",
+    tags: [
+      "Product Management",
+      "Leadership",
+      "Market Analysis",
+      "User Researh",
+      "Agile Methodology",
+      "UX/UI Design",
+    ],
+    imageUrl: shopSmartImg,
+  },
+  {
+    title: "Speakerz",
+    description:
+      "Connect your phone with your friend's phone and use them as a stereo speaker system.",
+    tags: [
+      "Product Management",
+      "Leadership",
+      "Market Analysis",
+      "User Researh",
+      "Agile Methodology",
+      "Android",
+    ],
+    imageUrl: speakerzImg,
+  },
+  {
+    title: "DiGusta",
+    description:
+      "An application for restaurants that provides an easy-to-use modern interface for their menu, therefore creating a better user experience and avoiding misunderstanding.",
+    tags: [
+      "Product Management",
+      "Leadership",
+      "Market Analysis",
+      "Agile Methodology",
+      "Android",
+    ],
+    imageUrl: digustaImg,
+  },
+  {
+    title: "Para",
+    description:
+      "Predictive and Adaptive Road Analyzer. Surveying and analysing public roads with the help of a smartphone.",
+    tags: [
+      "AI",
+      "Machine Learning",
+      "PyTorch",
+      "Panda",
+      "Google Colab",
+      "OpenCV",
+    ],
+    imageUrl: mlImage,
+  },
   {
     title: "PsychAI - Landing Page",
     description:
@@ -94,34 +142,6 @@ export const projectsData = [
     ],
 
     imageUrl: portfolioImg,
-  },
-  {
-    title: "ShopSmart",
-    description:
-      "ShopSmart is an online platform for recipe-based grocery shopping.",
-    tags: ["React", "Node.js", "MySQL", "Python", "JSON"],
-    imageUrl: shopSmartImg,
-  },
-  {
-    title: "Para",
-    description:
-      "Predictive and Adaptive Road Analyzer. Surveying and analysing public roads with the help of a smartphone.",
-    tags: [
-      "AI",
-      "Machine Learning",
-      "PyTorch",
-      "Panda",
-      "Google Colab",
-      "OpenCV",
-    ],
-    imageUrl: mlImage,
-  },
-  {
-    title: "Speakerz",
-    description:
-      "Connect your phone with your friend's phone and use them as a stereo speaker system.",
-    tags: ["Android", "Android Studio"],
-    imageUrl: speakerzImg,
   },
 ] as const;
 
