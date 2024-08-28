@@ -19,13 +19,14 @@ export default function About() {
       <SectionHeading title={"About"} />
 
       <p className="mb-3">
-        I&apos;m a Rotterdam-based{" "}
-        <span className="font-medium">Product Manager</span>. Focusing on
-        solving meaningful problems in the world via software and technology.
-        Navigate challenges with a constant drive for innovation and the ability
-        to simplify complex problems into manageable steps. Embracing a lifelong
-        learning mindset, continuously striving to enhance my skillset with the
-        intention to lay the groundwork for future ventures.
+        I&apos;m a Hungarian{" "}
+        <span className="font-medium">Product Manager</span> living in the
+        Netherlands. Focusing on solving meaningful problems in the world via
+        software and technology. Navigate challenges with a constant drive for
+        innovation and the ability to simplify complex problems into manageable
+        steps. Embracing a lifelong learning mindset, continuously striving to
+        enhance my skillset with the intention to lay the groundwork for future
+        ventures.
       </p>
       <p>
         {" "}
