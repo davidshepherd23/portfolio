@@ -1,75 +1,41 @@
 "use client";
 import React from "react";
+import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import SectionHeading from "./section-heading";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
 import { experiencesData } from "@/lib/data";
-import { useInView } from "react-intersection-observer"; // Add this line
-import { useTheme } from "@/context/theme-context";
-
-type ExperienceElementProps = {
-  theme: string;
-  item: {
-    date: string;
-    icon: React.ReactNode;
-    title: string;
-    location: string;
-    description: string;
-  };
-};
-
-const ExperienceElement = ({ theme, item }: ExperienceElementProps) => {
-  const { ref, inView } = useInView({ threshold: 0, triggerOnce: true });
-  return (
-    <div ref={ref} className="vertical-timeline-element">
-      <VerticalTimelineElement
-        visible={inView}
-        contentStyle={{
-          background:
-            theme === "light" ? "#f3f4f6" : "rgba(255, 255, 255, 0.05)",
-          boxShadow: "none",
-          border: "1px solid rgba(0, 0, 0, 0.05)",
-          textAlign: "left",
-          padding: "1.3rem 2rem",
-        }}
-        contentArrowStyle={{
-          borderRight:
-            theme === "light"
-              ? "0.4rem solid #9ca3af"
-              : "0.4rem solid rgba(255, 255, 255, 0.5)",
-        }}
-        date={item.date}
-        icon={item.icon}
-        iconStyle={{
-          background: theme === "light" ? "white" : "#1e2431",
-          fontSize: "1.5rem",
-        }}
-      >
-        <h3 className="font-semibold capitalize">{item.title}</h3>
-        <p className="!mt-0 font-normal">{item.location}</p>
-        <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
-          {item.description}
-        </p>
-      </VerticalTimelineElement>
-    </div>
-  );
-};
 
 export default function Experience() {
-  const { ref } = useSectionInView("Experience");
-  const { theme } = useTheme();
+  const { ref } = useSectionInView("Experience", 0.3);
   return (
-    <section ref={ref} id="experience" className="mb-28 scroll-mt-28 sm:mb-40">
-      <SectionHeading title="Experience" />
-      <VerticalTimeline lineColor="">
-        {experiencesData.map((item, index) => (
-          <ExperienceElement key={index} theme={theme} item={item} />
+    <section ref={ref} id="experience" className="mb-28 w-full max-w-[44rem] scroll-mt-28 sm:mb-36">
+      <SectionHeading eyebrow="Experience" title="The road so far" />
+      <ol className="relative ml-4 border-l border-[color:var(--line-color)]">
+        {experiencesData.map((item, i) => (
+          <motion.li
+            key={item.title}
+            className="relative mb-6 pl-10 last:mb-0"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.04 * i }}
+          >
+            <span className="absolute -left-[1.15rem] top-4 flex h-9 w-9 items-center justify-center rounded-full border border-black/[0.08] bg-white text-moss shadow-sm dark:border-white/10 dark:bg-night dark:text-lime">
+              {item.icon}
+            </span>
+            <div className="card p-5">
+              <p className="text-xs font-semibold uppercase tracking-wider text-ink/45 dark:text-white/40">
+                {item.date}
+              </p>
+              <h3 className="mt-1 font-semibold leading-snug">{item.title}</h3>
+              <p className="text-sm text-moss dark:text-lime">{item.location}</p>
+              <p className="mt-2 text-sm leading-relaxed text-ink/70 dark:text-white/65">
+                {item.description}
+              </p>
+            </div>
+          </motion.li>
         ))}
-      </VerticalTimeline>
+      </ol>
     </section>
   );
 }

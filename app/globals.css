@@ -3,9 +3,27 @@
 @tailwind utilities;
 
 html {
-  --line-color: #e5e7eb;
+  --font-sans: "Inter Variable";
+  --font-serif: "Instrument Serif";
+  --line-color: #e2e2da;
 }
 
 html.dark {
-  --line-color: rgba(255, 255, 255, 0.2);
+  --line-color: rgba(255, 255, 255, 0.15);
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-black/[0.06] bg-white/80 shadow-[0_1px_0_rgba(0,0,0,0.03),0_12px_32px_-16px_rgba(16,21,18,0.18)] backdrop-blur dark:border-white/10 dark:bg-white/[0.04] dark:shadow-none;
+  }
+  .chip {
+    @apply rounded-full border border-black/[0.08] bg-white px-3 py-1 text-xs font-medium text-ink/70 dark:border-white/10 dark:bg-white/5 dark:text-white/70;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-moss dark:text-lime;
+  }
+}
+
+.borderBlack {
+  @apply border border-black/10;
 }

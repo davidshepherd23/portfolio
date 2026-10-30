@@ -2,12 +2,14 @@ import React from "react";
 
 interface SectionHeadingProps {
   title: string;
+  eyebrow?: string;
 }
 
-export default function SectionHeading({ title }: SectionHeadingProps) {
+export default function SectionHeading({ title, eyebrow }: SectionHeadingProps) {
   return (
-    <h2 className="mb-8 text-center text-3xl font-medium capitalize">
-      {title}
-    </h2>
+    <div className="mb-10 text-center">
+      {eyebrow && <p className="eyebrow mb-3">{eyebrow}</p>}
+      <h2 className="font-serif text-4xl leading-tight sm:text-5xl">{title}</h2>
+    </div>
   );
 }

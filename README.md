@@ -1,19 +1,15 @@
-## Welcome to my portfolio project!!!
+# Dávid Juhász · personal website
 
-I developed this portfolio project using:
+Next.js 14 · TypeScript · Tailwind CSS · Framer Motion · Resend
 
-- ReactJS
-- NextJS
-- Typescript
-- Tailwind CSS
-- Framer Motion
-- React Email
-- Vercel
+## Run locally
+```
+npm install
+npm run dev     # http://localhost:3000
+```
 
-## Existing Issues
+## Content
+All copy, projects and timeline live in `lib/data.ts`. Images are in `public/`.
 
-## Further Development (ToDo)
-
-- [ ] Feedback form
-- [ ] Add an AI Chat Assistant to the website
-- [ ] Improve the Hero Section
+## Contact form
+Needs `RESEND_API_KEY` in `.env.local` (and on Vercel).

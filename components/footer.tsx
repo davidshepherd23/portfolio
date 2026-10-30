@@ -2,9 +2,10 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="mb-10 px-4 text-center text-gray-500">
-      <small className="mb-2 block text-xs">
-        &copy; 2030 David Juhasz. All rights reserved.
+    <footer className="mb-10 px-4 text-center text-ink/45 dark:text-white/40">
+      <small className="block text-xs">
+        &copy; {new Date().getFullYear()} Dávid Juhász · Built with Next.js,
+        Tailwind CSS and Framer Motion
       </small>
     </footer>
   );

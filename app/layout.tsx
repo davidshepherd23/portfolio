@@ -1,82 +1,48 @@
 import Header from "@/components/header";
 import "./globals.css";
-import { Inter } from "next/font/google";
+import "@fontsource-variable/inter";
+import "@fontsource/instrument-serif/400.css";
+import "@fontsource/instrument-serif/400-italic.css";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import { Toaster } from "react-hot-toast";
 import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 import Footer from "@/components/footer";
-import Head from "next/head";
-import Image from "next/image";
-import thumbnailImg from "@/public/thumbnail.png";
+import type { Metadata } from "next";
 
-const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "Portfolio: David Juhasz",
-  description:
-    "A portfolio website for David Juhasz. I am a full stack web developer using NextJS, Typescript and React.",
-  openGraph: {
-    images: [thumbnailImg],
-  },
+const title = "Dávid Juhász · Founder, Momentum Moat";
+const description =
+  "I build human-focused AI systems teams actually use. Founder of Momentum Moat, AI strategy and implementation for Dutch SMEs. Previously founded RentSwap (acquired) and worked on AI and cloud at Deutsche Telekom.";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://davidjuhasz.vercel.app"),
+  title,
+  description,
+  openGraph: { title, description, images: ["/thumbnail.png"], type: "website" },
+  twitter: { card: "summary_large_image", title, description, images: ["/thumbnail.png"] },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="!scroll-smooth">
       <body
-        className={`${inter.className} relative h-[500px] bg-gray-50 pt-28 text-gray-950 dark:bg-gray-900 dark:text-gray-50 
-        dark:text-opacity-90 sm:pt-36`}
+        className={`relative bg-paper pt-28 font-sans text-ink antialiased dark:bg-night dark:text-white/90 sm:pt-36`}
       >
-        <div
-          className="absolute right-[11rem] top-[-6rem] -z-10 h-[31.25rem] w-[31.25rem]
-                       rounded-full bg-[#fbe2e3] blur-[10rem] dark:bg-[#946263] sm:w-[68.75]"
-        ></div>
-        <div
-          className="absolute left-[-35rem] top-[-1rem] -z-10  h-[31.25rem] w-[50rem]
-                     rounded-full bg-[#dbd7fb] blur-[10rem] dark:bg-[#676394] 
-                      sm:w-[68.75] md:left-[-33rm] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[5rem]"
-        ></div>
+        <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[46rem] overflow-hidden">
+          <div className="absolute left-1/2 top-[-12rem] h-[34rem] w-[60rem] -translate-x-1/2 rounded-full bg-lime/60 blur-[9rem] dark:bg-moss/30" />
+          <div className="absolute right-[-10rem] top-[6rem] h-[22rem] w-[30rem] rounded-full bg-[#e7f0ff] blur-[8rem] dark:bg-[#1c2a3d]/60" />
+        </div>
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
             <Header />
             {children}
             <Footer />
-
             <Toaster position="top-right" />
             <ThemeSwitch />
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
       </body>
     </html>
-  );
-}
-
-export function Metatags({
-  title = "Portfolio: David Juhasz",
-  description = "A portfolio website for David Juhasz. I am a full stack web developer using NextJS, Typescript and React.",
-}) {
-  return (
-    <Head>
-      <meta name="title" content={title} />
-      <meta name="description" content={description} />
-
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:site" content="@JDavid233" />
-      <meta name="twitter:title" content={thumbnailImg.src} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={thumbnailImg.src} />
-      <meta name="twitter:url" content="https://davidjuhasz.vercel.app" />
-
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={thumbnailImg.src} />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://davidjuhasz.vercel.app" />
-    </Head>
   );
 }
