@@ -49,17 +49,17 @@ export default function Intro() {
         </motion.p>
 
         <motion.h1
-          className="mt-4 max-w-[48rem] font-serif text-[2.6rem] leading-[1.05] tracking-tight sm:text-[4.25rem]"
+          className="mt-4 max-w-[46rem] text-balance font-serif text-[2.25rem] leading-[1.1] min-[400px]:text-[2.5rem] tracking-tight sm:text-[3.5rem] lg:text-[4rem]"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
         >
-          I build <em className="text-moss dark:text-lime">human-focused</em> AI
+          I build <em className="whitespace-nowrap text-moss dark:text-lime">human‑focused</em> AI
           systems your team actually uses.
         </motion.h1>
 
         <motion.p
-          className="mt-6 max-w-[38rem] text-lg leading-relaxed text-ink/70 dark:text-white/65"
+          className="mt-5 max-w-[36rem] text-base leading-relaxed text-ink/70 dark:text-white/65 sm:mt-6 sm:text-lg"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.15 }}
@@ -70,28 +70,28 @@ export default function Intro() {
         </motion.p>
 
         <motion.div
-          className="mt-9 flex flex-col items-center gap-3 sm:flex-row"
+          className="mt-8 flex flex-wrap items-center justify-center gap-3"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
           <Link
             href="#contact"
-            className="group flex items-center gap-2 rounded-full bg-ink px-7 py-3 font-medium text-white outline-none transition hover:scale-[1.03] hover:bg-moss focus:scale-[1.03] active:scale-100 dark:bg-lime dark:text-ink dark:hover:bg-white"
+            className="btn btn-primary group"
           >
             Let&apos;s talk
-            <BsArrowRight className="transition group-hover:translate-x-1" />
+            <BsArrowRight className="transition-transform group-hover:translate-x-0.5" />
           </Link>
           <Link
             href="#work"
-            className="rounded-full border border-black/10 bg-white px-7 py-3 font-medium outline-none transition hover:scale-[1.03] focus:scale-[1.03] dark:border-white/10 dark:bg-white/5"
+            className="btn btn-secondary"
           >
             See my work
           </Link>
-          <div className="flex gap-3">
+          <div className="flex basis-full justify-center gap-3 sm:basis-auto">
             <a
               aria-label="LinkedIn"
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-black/10 bg-white text-ink/70 transition hover:scale-110 hover:text-ink dark:border-white/10 dark:bg-white/5 dark:text-white/70 dark:hover:text-white"
+              className="icon-btn"
               href={contact.linkedin}
               target="_blank"
               rel="noreferrer"
@@ -100,7 +100,7 @@ export default function Intro() {
             </a>
             <a
               aria-label="GitHub"
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-black/10 bg-white text-lg text-ink/70 transition hover:scale-110 hover:text-ink dark:border-white/10 dark:bg-white/5 dark:text-white/70 dark:hover:text-white"
+              className="icon-btn"
               href={contact.github}
               target="_blank"
               rel="noreferrer"
@@ -112,17 +112,17 @@ export default function Intro() {
       </div>
 
       <motion.dl
-        className="card mt-16 grid grid-cols-2 divide-black/[0.06] overflow-hidden dark:divide-white/10 sm:grid-cols-4 sm:divide-x"
+        className="card mx-auto mt-12 grid max-w-[40rem] grid-cols-3 divide-x divide-black/[0.06] overflow-hidden dark:divide-white/10 sm:mt-16"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
       >
         {statsData.map((s) => (
-          <div key={s.label} className="px-5 py-6 text-center">
-            <dt className="font-serif text-4xl text-ink dark:text-white">
+          <div key={s.label} className="px-2 py-5 text-center sm:px-5 sm:py-6">
+            <dt className="font-serif text-3xl text-ink dark:text-white sm:text-4xl">
               {s.value}
             </dt>
-            <dd className="mt-1 text-sm leading-snug text-ink/60 dark:text-white/55">
+            <dd className="mt-1 text-xs leading-snug text-ink/60 dark:text-white/55 sm:text-sm">
               {s.label}
             </dd>
           </div>

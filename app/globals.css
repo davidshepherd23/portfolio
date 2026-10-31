@@ -19,6 +19,25 @@ html.dark {
   .chip {
     @apply rounded-full border border-black/[0.08] bg-white px-3 py-1 text-xs font-medium text-ink/70 dark:border-white/10 dark:bg-white/5 dark:text-white/70;
   }
+  /* Buttons: 48px touch target, colour + elevation state layers, no size jumps */
+  .btn {
+    @apply inline-flex h-12 select-none items-center justify-center gap-2 whitespace-nowrap rounded-full px-6 text-[0.9375rem] font-medium outline-none transition-[background-color,box-shadow,color] duration-200 focus-visible:ring-2 focus-visible:ring-moss focus-visible:ring-offset-2 focus-visible:ring-offset-paper disabled:cursor-not-allowed disabled:opacity-60 dark:focus-visible:ring-lime dark:focus-visible:ring-offset-night;
+  }
+  .btn-primary {
+    @apply bg-ink text-white shadow-sm hover:bg-moss hover:shadow-md active:shadow-sm dark:bg-lime dark:text-ink dark:hover:bg-white;
+  }
+  .btn-secondary {
+    @apply border border-black/10 bg-white text-ink hover:bg-black/[0.04] dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:bg-white/10;
+  }
+  .icon-btn {
+    @apply inline-flex h-12 w-12 items-center justify-center rounded-full border border-black/10 bg-white text-lg text-ink/70 outline-none transition-colors duration-200 hover:bg-black/[0.04] hover:text-ink focus-visible:ring-2 focus-visible:ring-moss focus-visible:ring-offset-2 focus-visible:ring-offset-paper dark:border-white/15 dark:bg-white/5 dark:text-white/70 dark:hover:bg-white/10 dark:hover:text-white dark:focus-visible:ring-lime dark:focus-visible:ring-offset-night;
+  }
+  .text-link {
+    @apply -mx-1 inline-flex min-h-[44px] items-center gap-1.5 rounded-md px-1 text-sm font-semibold text-ink underline-offset-4 outline-none transition-colors hover:text-moss hover:underline focus-visible:ring-2 focus-visible:ring-moss dark:text-white dark:hover:text-lime dark:focus-visible:ring-lime;
+  }
+  .section {
+    @apply mb-24 w-full scroll-mt-28 sm:mb-32;
+  }
   .eyebrow {
     @apply text-xs font-semibold uppercase tracking-[0.18em] text-moss dark:text-lime;
   }

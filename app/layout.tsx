@@ -5,15 +5,14 @@ import "@fontsource/instrument-serif/400.css";
 import "@fontsource/instrument-serif/400-italic.css";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import { Toaster } from "react-hot-toast";
-import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 import Footer from "@/components/footer";
 import type { Metadata } from "next";
 
 
-const title = "Dávid Juhász · Founder, Momentum Moat";
+const title = "Dávid Juhász";
 const description =
-  "I build human-focused AI systems teams actually use. Founder of Momentum Moat, AI strategy and implementation for Dutch SMEs. Previously founded RentSwap (acquired) and worked on AI and cloud at Deutsche Telekom.";
+  "3x founder based in Rotterdam. Founded RentSwap (acquired) and Momentum Moat. Previously AI and cloud at Deutsche Telekom.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://davidjuhasz.vercel.app"),
@@ -39,7 +38,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
             <Footer />
             <Toaster position="top-right" />
-            <ThemeSwitch />
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
       </body>

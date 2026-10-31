@@ -17,7 +17,7 @@ function Details({ project }: { project: FeaturedProject }) {
           </span>
         )}
       </div>
-      <h3 className="mt-3 font-serif text-3xl leading-tight sm:text-[2.1rem]">
+      <h3 className="mt-3 font-serif text-[1.75rem] leading-tight sm:text-[2rem]">
         {project.title}
       </h3>
       <p className="mt-1 text-sm font-medium text-moss dark:text-lime">{project.role}</p>
@@ -51,7 +51,7 @@ function Highlights({ project }: { project: FeaturedProject }) {
           href={project.link.href}
           target="_blank"
           rel="noreferrer"
-          className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-ink underline-offset-4 hover:underline dark:text-white"
+          className="text-link mt-4"
         >
           {project.link.label} <BsArrowUpRight />
         </a>
@@ -89,15 +89,23 @@ export default function Project({
                 </span>
               )}
             </div>
-            <Image
-              src={project.image}
-              alt={`${project.title} website`}
-              sizes="(min-width: 640px) 56rem, 100vw"
-              className="h-auto w-full transition duration-700 group-hover:scale-[1.015]"
-            />
+            <a
+              href={project.link?.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={project.link?.label ?? `${project.title} website`}
+              className="block outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-moss dark:focus-visible:ring-lime"
+            >
+              <Image
+                src={project.image}
+                alt={`${project.title} website`}
+                sizes="(min-width: 640px) 56rem, 100vw"
+                className="h-auto w-full transition duration-700 group-hover:scale-[1.015]"
+              />
+            </a>
           </div>
         </div>
-        <div className="grid gap-6 p-6 sm:grid-cols-2 sm:gap-10 sm:p-9">
+        <div className="grid gap-6 p-6 sm:grid-cols-2 sm:gap-10 sm:p-8">
           <div>
             <Details project={project} />
           </div>
@@ -113,7 +121,7 @@ export default function Project({
   return (
     <motion.article {...reveal} className="card group overflow-hidden">
       <div className={clsx("grid sm:grid-cols-2", flip && "sm:[direction:rtl]")}>
-        <div className="flex flex-col p-6 [direction:ltr] sm:p-9">
+        <div className="flex flex-col p-6 [direction:ltr] sm:p-8">
           <Details project={project} />
           <div className="mt-4">
             <Highlights project={project} />

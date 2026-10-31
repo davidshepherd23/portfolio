@@ -1,51 +1,35 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { links } from "@/lib/data";
 import Link from "next/link";
 import clsx from "clsx";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import ThemeSwitch from "./theme-switch";
 
 export default function Header() {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
 
   return (
-    <header className="relative z-[999]">
-      <motion.div //left-1/2 -> Object start from the middle of the screen -> Add -translate-x-1/2 -> Bring object to negative x with half its size -> The object now in the middle
-        className="sm:rounded-ful fixed left-1/2 top-0 h-[4.5rem] w-full rounded-none border border-white 
-        border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] 
-        dark:border-white/10 dark:bg-night dark:bg-opacity-75 sm:top-6 sm:h-[3.25rem]
-          sm:w-[30rem] sm:rounded-full"
-        initial={{ opacity: 0, x: "-50%", y: -100 }}
-        animate={{ opacity: 1, x: "-50%", y: 0 }}
-      ></motion.div>
-
-      <nav
-        className="fixed left-1/2 top-[0.15rem] flex h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0"
-        //Normally this nav logic would be in <motion.div> above, but it doesn't work.
+    <header className="fixed inset-x-0 top-0 z-[999] flex justify-center sm:top-6">
+      <motion.nav
+        aria-label="Main"
+        className="flex h-16 w-full items-center justify-center border-b border-black/[0.06] bg-white/80 px-2 shadow-lg shadow-black/[0.03] backdrop-blur-md dark:border-white/10 dark:bg-night/75 sm:h-14 sm:w-auto sm:rounded-full sm:border sm:px-2"
+        initial={{ opacity: 0, y: -100 }}
+        animate={{ opacity: 1, y: 0 }}
       >
-        <ul
-          className="flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[0.9rem] font-medium
-            text-gray-500 sm:w-[initial] sm:flex-nowrap sm:gap-5"
-        >
+        <ul className="flex items-center gap-0.5 text-[0.875rem] font-medium text-gray-500 sm:gap-1 sm:text-[0.9rem]">
           {links.map((link) => (
-            <motion.li
-              className="relative flex h-3/4 items-center justify-center"
-              key={link.hash}
-              initial={{ opacity: 0, y: -100 }}
-              animate={{ opacity: 1, y: 0 }}
-            >
+            <li className="relative" key={link.hash}>
               <Link
                 className={clsx(
-                  "flex w-full items-center justify-center px-3 py-3 transition hover:text-gray-950 dark:text-gray-300 dark:hover:text-white",
-                  {
-                    "text-gray-950 dark:text-gray-200":
-                      activeSection === link.name,
-                  },
+                  "relative flex h-10 items-center rounded-full px-3 outline-none transition-colors hover:text-gray-950 focus-visible:ring-2 focus-visible:ring-moss dark:text-gray-300 dark:hover:text-white dark:focus-visible:ring-lime sm:px-4",
+                  { "text-gray-950 dark:text-white": activeSection === link.name },
                 )}
                 href={link.hash}
+                aria-current={activeSection === link.name ? "true" : undefined}
                 onClick={() => {
                   setActiveSection(link.name);
                   setTimeOfLastClick(Date.now());
@@ -56,18 +40,18 @@ export default function Header() {
                   <motion.span
                     className="absolute inset-0 -z-10 rounded-full bg-lime/70 dark:bg-white/10"
                     layoutId="activeSection"
-                    transition={{
-                      type: "spring",
-                      stiffness: 380,
-                      damping: 30,
-                    }}
-                  ></motion.span>
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
                 )}
               </Link>
-            </motion.li>
+            </li>
           ))}
+          <li aria-hidden className="mx-1 h-5 w-px bg-black/10 dark:bg-white/15" />
+          <li>
+            <ThemeSwitch />
+          </li>
         </ul>
-      </nav>
+      </motion.nav>
     </header>
   );
 }

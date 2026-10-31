@@ -14,7 +14,6 @@ import andysSiteImg from "@/public/andys-site.webp";
 
 export const links = [
   { name: "Home", hash: "#home" },
-  { name: "About", hash: "#about" },
   { name: "Work", hash: "#work" },
   { name: "Experience", hash: "#experience" },
   { name: "Contact", hash: "#contact" },
@@ -27,26 +26,9 @@ export const contact = {
 } as const;
 
 export const statsData = [
-  { value: "1 exit", label: "RentSwap, acquired by a competitor" },
-  { value: "1000s", label: "users reached with RentSwap" },
-  { value: "100+", label: "short videos made for growth" },
+  { value: "1 exit", label: "RentSwap, first company" },
+  { value: "3x", label: "founder" },
   { value: "5 yrs", label: "building with AI and cloud" },
-] as const;
-
-export const servicesData = [
-  {
-    title: "Strategy",
-    description:
-      "A clear, prioritised plan for where AI actually moves the needle.",
-  },
-  {
-    title: "Implementation",
-    description: "I build the systems, not just recommend them.",
-  },
-  {
-    title: "Training",
-    description: "Your team learns to run it, so the adoption sticks.",
-  },
 ] as const;
 
 export type FeaturedProject = {
@@ -72,14 +54,29 @@ export const featuredProjects: readonly FeaturedProject[] = [
     period: "Nov 2025 – now",
     badge: "Current",
     description:
-      "An AI transformation firm for high-growth Dutch SMEs. Sharp AI strategy paired with hands-on engineering that ships. No 200-slide decks, no six-month diagnostics.",
+      "An AI strategy and implementation firm for high-growth Dutch SMEs.",
     highlights: [
-      "Strategy, implementation and training, together from day one",
-      "Human-focused AI systems teams actually use, not demos that collect dust",
+      "Plans, builds and trains teams on AI systems",
     ],
     tags: ["AI Strategy", "AI Adoption", "Automation", "Claude", "n8n"],
     image: momentumMoatImg,
     imageBg: "#f6f2e7",
+  },
+  {
+    title: "Andy's Accent School",
+    role: "Founding Director, Partnerships & BD",
+    period: "Dec 2025 – May 2026",
+    description:
+      "Accent training for professionals and global teams. I led partnerships and business development.",
+    highlights: [
+      "Built the company's landing page",
+      "Ran customer discovery with large companies in the US, Singapore and Dubai",
+    ],
+    tags: ["Business Development", "B2B Outreach", "Landing Page", "Sales"],
+    image: andysSiteImg,
+    frame: "browser",
+    url: "youraccentcoach.com",
+    link: { label: "Visit youraccentcoach.com", href: "https://youraccentcoach.com/" },
   },
   {
     title: "RentSwap",
@@ -87,44 +84,31 @@ export const featuredProjects: readonly FeaturedProject[] = [
     period: "Aug 2024 – Aug 2025",
     badge: "Acquired",
     description:
-      "Connected home-seekers with moving-out tenants: a community-based way through the Dutch rental housing crisis. Built alone, from my own problem, and sold to a competitor.",
+      "My first company. Matched home-seekers with tenants moving out in the Dutch rental market. Built solo. Acquired by a competitor.",
     highlights: [
-      "Thousands of users and WhatsApp communities that are still active",
-      "100+ short-form videos; landing page converted at 50%+ at launch",
-      "Negotiated the acquisition with competitors",
+      "Thousands of users",
+      "Landing page converted 50%+ of visitors at launch",
+      "Grew it with 100+ short-form videos",
+      "Negotiated the sale with competing buyers",
     ],
     tags: ["Founder", "Growth", "Short-form Video", "Landing Pages", "Community"],
     image: rentswapSiteImg,
     frame: "browser",
     url: "rentswap.nl",
-  },
-  {
-    title: "Andy's Accent School",
-    role: "Founding Director, Partnerships & BD",
-    period: "Dec 2025 – May 2026",
-    description:
-      "Helping professionals and global teams win more deals and keep more clients through accent clarity training.",
-    highlights: [
-      "Built the landing page, still live",
-      "Customer discovery calls with large organisations in the US, Singapore and Dubai",
-    ],
-    tags: ["Business Development", "B2B Outreach", "Landing Page", "Sales"],
-    image: andysSiteImg,
-    frame: "browser",
-    url: "andysaccentschool.com",
+    link: { label: "Visit rentswap.nl", href: "https://www.rentswap.nl/" },
   },
   {
     title: "PARA",
     role: "AI Engineer · Deutsche Telekom",
     period: "2021 – 2022",
     description:
-      "Predictive and Adaptive Road Analyzer: surveying and analysing public roads with nothing more than a smartphone and computer vision.",
-    highlights: ["Computer vision and ML pipeline for road infrastructure mapping"],
+      "Predictive and Adaptive Road Analyzer. Surveys public roads with a smartphone camera and computer vision.",
+    highlights: ["Built at Deutsche Telekom IT Solutions"],
     tags: ["Computer Vision", "PyTorch", "OpenCV", "Python"],
     image: paraImg,
     imageBg: "#0f1a14",
     link: {
-      label: "Read the story",
+      label: "Deutsche Telekom article",
       href: "https://www.deutschetelekomitsolutions.hu/en/news/para-helps-to-map-the-road-infrastructure/",
     },
   },
@@ -134,27 +118,27 @@ export const earlierProjects = [
   {
     title: "ShopSmart",
     description:
-      "Recipes built from discounted items in shops near you, to plan your next meal.",
+      "Plans meals from discounted groceries in shops near you.",
     tags: ["Product", "User Research", "UX/UI"],
     image: shopSmartImg,
   },
   {
     title: "Speakerz",
     description:
-      "Connect your phone with friends' phones and use them as one stereo speaker system.",
+      "Turns several phones into one stereo speaker system.",
     tags: ["Product", "Android"],
     image: speakerzImg,
   },
   {
     title: "DiGusta",
     description:
-      "A modern menu interface for restaurants that avoids misunderstandings at the table.",
+      "Digital restaurant menus that cut ordering mistakes.",
     tags: ["Product", "Android", "AR"],
     image: digustaImg,
   },
   {
     title: "PsychAI",
-    description: "Landing page for a mental health support AI bot.",
+    description: "Landing page for a mental health AI chatbot.",
     tags: ["Next.js", "TypeScript", "Tailwind"],
     image: mentalHealthSiteImg,
   },
@@ -165,7 +149,7 @@ export const experiencesData = [
     title: "Founder · AI Strategy, Development & Implementation",
     location: "Momentum Moat · Rotterdam",
     description:
-      "AI transformation firm for high-growth Dutch SMEs. Strategy, implementation and training, together from day one.",
+      "AI strategy and implementation firm for high-growth Dutch SMEs.",
     icon: React.createElement(RiRocket2Fill),
     date: "Nov 2025 – Present",
   },
@@ -173,7 +157,7 @@ export const experiencesData = [
     title: "Founding Director of Strategic Partnerships & BD",
     location: "Andy's Accent School · Remote, part-time",
     description:
-      "Helping professionals and global teams win more deals and keep more clients through accent clarity training.",
+      "Accent training for professionals and global teams. Built the landing page and ran B2B customer discovery.",
     icon: React.createElement(FaHandshake),
     date: "Dec 2025 – May 2026",
   },
@@ -181,7 +165,7 @@ export const experiencesData = [
     title: "Founder (Acquired)",
     location: "RentSwap · Rotterdam",
     description:
-      "Helped home-seekers secure rental homes by connecting them with moving-out tenants. A community-based housing solution for the Dutch market.",
+      "Matched home-seekers with tenants moving out. Built solo, grew to thousands of users, acquired by a competitor.",
     icon: React.createElement(FaHome),
     date: "Aug 2024 – Aug 2025",
   },
@@ -189,7 +173,7 @@ export const experiencesData = [
     title: "Solution Engineer",
     location: "Deutsche Telekom IT Solutions HU · Budapest",
     description:
-      "Designed cloud solutions for the German market in a team of 20. Google Cloud Certified Associate Cloud Engineer.",
+      "Designed cloud solutions for the German market in a 20-person team. Google Cloud certified.",
     icon: React.createElement(SiGooglecloud),
     date: "Jul 2022 – Oct 2023",
   },
@@ -197,7 +181,7 @@ export const experiencesData = [
     title: "AI Engineer",
     location: "Deutsche Telekom · Budapest, part-time",
     description:
-      "Hands-on computer vision and machine learning on PARA, mapping road infrastructure from a smartphone.",
+      "Computer vision and machine learning for PARA, which maps roads from a smartphone.",
     icon: React.createElement(MdOutlineWork),
     date: "Oct 2021 – Jul 2022",
   },
@@ -210,22 +194,3 @@ export const experiencesData = [
   },
 ] as const;
 
-export const skillsData = [
-  "AI Strategy",
-  "AI Adoption",
-  "LLM Evals",
-  "Prompt & Agent Design",
-  "Claude / Claude Code",
-  "n8n",
-  "Business Development",
-  "Go-to-Market",
-  "Landing Pages",
-  "Short-form Video",
-  "Product Management",
-  "TypeScript",
-  "React / Next.js",
-  "Python",
-  "SQL",
-  "Google Cloud",
-  "Computer Vision",
-] as const;

@@ -8,17 +8,15 @@ export default function SubmitBtn() {
   return (
     <button
       type="submit"
-      className="group flex h-[3rem] w-[9rem] items-center justify-center gap-2 rounded-full bg-ink
-      font-medium text-white outline-none transition-all hover:scale-105 hover:bg-moss focus:scale-105 active:scale-100
-      disabled:scale-100 disabled:opacity-65 dark:bg-lime dark:text-ink"
+      className="btn btn-primary group mt-1 w-full sm:w-auto sm:min-w-[8.5rem] sm:self-end"
       disabled={pending}
     >
       {pending ? (
-        <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>
+        <span className="h-5 w-5 animate-spin rounded-full border-2 border-current border-t-transparent" />
       ) : (
         <>
-          Send{" "}
-          <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:-translate-y-1 group-hover:translate-x-1" />{" "}
+          Send
+          <FaPaperPlane className="text-xs opacity-80 transition-transform group-hover:translate-x-0.5" />
         </>
       )}
     </button>

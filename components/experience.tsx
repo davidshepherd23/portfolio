@@ -8,8 +8,8 @@ import { experiencesData } from "@/lib/data";
 export default function Experience() {
   const { ref } = useSectionInView("Experience", 0.3);
   return (
-    <section ref={ref} id="experience" className="mb-28 w-full max-w-[44rem] scroll-mt-28 sm:mb-36">
-      <SectionHeading eyebrow="Experience" title="The road so far" />
+    <section ref={ref} id="experience" className="section max-w-[44rem]">
+      <SectionHeading title="Experience" />
       <ol className="relative ml-4 border-l border-[color:var(--line-color)]">
         {experiencesData.map((item, i) => (
           <motion.li

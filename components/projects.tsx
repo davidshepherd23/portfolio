@@ -10,8 +10,8 @@ export default function Projects() {
   const { ref } = useSectionInView("Work", 0.1);
 
   return (
-    <section ref={ref} id="work" className="mb-28 w-full max-w-[60rem] scroll-mt-28 sm:mb-36">
-      <SectionHeading eyebrow="Selected work" title="What I've built" />
+    <section ref={ref} id="work" className="section max-w-[60rem]">
+      <SectionHeading title="What I&apos;ve built so far" />
 
       <div className="space-y-6">
         {featuredProjects.map((p, i) => (
@@ -19,7 +19,7 @@ export default function Projects() {
         ))}
       </div>
 
-      <h3 className="mb-5 mt-20 text-center font-serif text-3xl">Earlier projects</h3>
+      <h3 className="mb-6 mt-16 text-center font-serif text-2xl sm:mt-20 sm:text-[1.75rem]">Earlier projects</h3>
       <div className="grid gap-4 sm:grid-cols-2">
         {earlierProjects.map((p) => (
           <article key={p.title} className="card group flex gap-4 overflow-hidden p-4">
